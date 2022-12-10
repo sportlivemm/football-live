@@ -2,37 +2,14 @@
 <html>
 <head>
 <meta charset=utf-8 />
+	<script type='application/javascript'>document.interestCohort = null;</script>
+</head>
 <body>
 	
 	<h1> England Vs France </h1>	
 
 <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
 <video id="video-id"><source src="https://s@cntlnk-main-edge-access.secure.footprint.net/entrypoint/c7_vivo01_dai_source-20001_all.m3u8" type="application/x-mpegURL"/>
-
-<script>
-	(function () {
-	  const cohorts = "interestCohort";
-	  const documentProto = Document.prototype;
-	  const flocSupported = cohorts in documentProto;
-
-	  if (!flocSupported) {
-	    return;
-	  }
-
-	  const descriptor = Object.getOwnPropertyDescriptor(documentProto, cohorts);
-	  const writable = descriptor && descriptor.writable;
-	  if (writable) {
-	    const proxy = new Proxy(documentProto[cohorts], { apply: () => Promise.reject() });
-	    const config = {
-	      writable: false,
-	      value: proxy,
-	      configurable: false,
-	      enumerable: false,
-	    };
-	    Object.defineProperty(documentProto, cohorts, config);
-	  }
-	})();
-</script>
 	
 <script>
     var myFP = fluidPlayer(
